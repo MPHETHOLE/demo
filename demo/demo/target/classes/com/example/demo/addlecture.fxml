@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20"
+      style="-fx-background-color: #ffffff; -fx-padding: 30; -fx-border-color: #dcdcdc;
+             -fx-border-width: 1; -fx-background-radius: 8;"
+      xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.AddlectureController">
+
+    <!-- Header Label -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Add New Lecturer" />
+
+    <!-- Form Layout with GridPane -->
+    <GridPane alignment="CENTER" hgap="20" style="-fx-pref-width: 600px;" vgap="15">
+        <!-- Column constraints for better layout control -->
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="150" />
+        </columnConstraints>
+
+        <!-- Lecturer Name Field -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Lecturer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="lecturerNameField" promptText="Enter lecturer's full name" style="-fx-pref-width: 150px;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </TextField>
+
+        <!-- Employee Number Field -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Employee No:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="employeeNumberField" promptText="Enter unique employee number" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </TextField>
+
+        <!-- Email Field -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="emailField" promptText="Enter lecturer's email address" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </TextField>
+
+        <!-- Role ComboBox -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <ComboBox fx:id="roleComboBox" prefHeight="45.0" prefWidth="360.0" promptText="Select role" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </ComboBox>
+
+        <!-- Row constraints for controlling row height -->
+        <rowConstraints>
+            <RowConstraints minHeight="40" />
+            <RowConstraints minHeight="40" />
+            <RowConstraints minHeight="40" />
+            <RowConstraints minHeight="40" />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Submit Button -->
+    <Button onAction="#handleAddLecturer" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Add Lecturer">
+        <VBox.margin>
+            <Insets left="200.0" top="70.0" />
+        </VBox.margin>
+    </Button>
+</VBox>

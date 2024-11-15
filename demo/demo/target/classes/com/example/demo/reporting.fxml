@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ReportingController">
+    <VBox alignment="TOP_CENTER" prefWidth="754.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+
+        <!-- Page Title -->
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Create Report" />
+
+        <!-- Form Grid -->
+        <GridPane alignment="CENTER" hgap="10" prefHeight="467.0" prefWidth="907.0" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints minWidth="150" />
+                <ColumnConstraints minWidth="300" />
+            </columnConstraints>
+
+            <!-- Class Selection -->
+            <Label text="Class:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="classComboBox" promptText="Select Class" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <!-- Module Selection -->
+            <Label text="Module:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="moduleComboBox" promptText="Select Module" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <!-- Challenges Text Area -->
+            <Label text="Challenges:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextArea fx:id="challengesTextArea" prefHeight="126.0" prefWidth="478.0" promptText="Describe challenges encountered" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <!-- Recommendations Text Area -->
+            <Label text="Recommendations:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextArea fx:id="recommendationsTextArea" prefHeight="174.0" prefWidth="478.0" promptText="Provide recommendations" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button fx:id="saveReportButton" onAction="#handleSaveReport" style="-fx-pref-width: 120px;" text="Save Report" />
+            <Button fx:id="clearFormButton" onAction="#handleClearForm" style="-fx-pref-width: 120px;" text="Clear" />
+        </HBox>
+
+        <!-- Status Message -->
+        <Label fx:id="statusMessageLabel" style="-fx-text-fill: red; -fx-font-size: 12px;" text="" />
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20" style="-fx-background-color: #ffffff; -fx-padding: 30; -fx-border-color: #dcdcdc; -fx-border-width: 1; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AddclassController">
+    <!-- Header Label -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Add New Class">
+        <VBox.margin>
+            <Insets right="220.0" />
+        </VBox.margin></Label>
+
+    <!-- Form Layout with GridPane -->
+    <GridPane alignment="CENTER" hgap="20" style="-fx-pref-width: 600px;" vgap="15">
+        <!-- Column constraints for better layout control -->
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="150" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="150" />
+        </columnConstraints>
+
+        <!-- Class Name Field -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Class Name" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="classNameField" prefHeight="37.0" prefWidth="284.0" promptText="Enter class name" style="-fx-pref-width: 150px;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets right="65.0" top="30.0" />
+            </GridPane.margin>
+        </TextField>
+
+        <!-- Semester ComboBox -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Semester" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <ComboBox fx:id="semesterComboBox" prefHeight="45.0" prefWidth="360.0" promptText="Select semester" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </ComboBox>
+
+        <!-- Academic Year ComboBox -->
+        <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Academic Year" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </Label>
+        <ComboBox fx:id="academicYearComboBox" prefHeight="45.0" prefWidth="360.0" promptText="Select academic year" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="30.0" />
+            </GridPane.margin>
+        </ComboBox>
+
+        <!-- Row constraints for controlling row height -->
+        <rowConstraints>
+            <RowConstraints minHeight="40.0" />
+            <RowConstraints minHeight="40.0" />
+            <RowConstraints minHeight="40.0" />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Submit Button -->
+    <Button onAction="#handleAddClass" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Add Class">
+        <VBox.margin>
+            <Insets left="70.0" top="70.0" />
+        </VBox.margin>
+    </Button>
+</VBox>
+
